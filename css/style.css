@@ -17,27 +17,19 @@ body {
   line-height: 1.6;
 }
 
-/* Navbar */
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Override for program pages */
+body.program-page {
+  background-color: #111 !important;
+  color: white !important;
 }
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9f9f9;
-  color: #000;
-}
-
-/* Navbar Styling */
+/* --- NAVBAR STYLES --- */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px 40px;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: #000; /* Changed to black */
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
@@ -45,11 +37,11 @@ body {
 }
 
 .logo img {
-  height: 50px;
+  width: 150px;
+  height: 70px;
   object-fit: contain;
 }
 
-/* Navigation Links */
 .nav-links {
   list-style: none;
   display: flex;
@@ -58,7 +50,7 @@ body {
 
 .nav-links li a {
   text-decoration: none;
-  color: #000;
+  color: #fff; /* White for contrast */
   font-weight: 500;
   transition: color 0.3s;
 }
@@ -68,7 +60,6 @@ body {
   color: red;
 }
 
-/* Right Side Buttons */
 .nav-right {
   display: flex;
   align-items: center;
@@ -76,21 +67,29 @@ body {
 }
 
 .btn-red {
-  background-color: red;
+  background-color: transparent;
   color: white;
-  padding: 8px 16px;
-  border: none;
+  padding: 9px 20px;
+  font-size: 16px;
+  border: 2px solid white;
   border-radius: 6px;
-  font-weight: 500;
+  font-weight: bold;
   text-decoration: none;
-  transition: background 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.btn-red:hover {
+  background-color: red;
+  border-color: red;
+  color: white;
 }
 
 .btn-red:hover {
   background-color: darkred;
 }
 
-/* Profile Image */
 .profile-img {
   width: 40px;
   height: 40px;
@@ -105,19 +104,30 @@ body {
   transform: scale(1.1);
 }
 
-/* Responsive */
+/* Logo size update */
+.logo img {
+  height: 70px;
+  object-fit: contain;
+}
+@media (max-width: 768px) {
+  .logo img {
+    height: 55px;
+  }
+}
+
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
+    padding: 15px 30px;
+    gap: 15px;
   }
-
   .nav-links {
     flex-direction: column;
     gap: 10px;
     margin: 10px 0;
+    width: 100%;
   }
-
   .nav-right {
     width: 100%;
     justify-content: space-between;
@@ -145,7 +155,6 @@ body {
     justify-content: space-between;
   }
 }
-
 /* Hero Section */
 .hero {
   background: url('../images/hero.jpg') center center / cover no-repeat;
@@ -547,5 +556,2014 @@ body.scroll-page {
         font-size: 36px;
     }
 }
+
+/* --- MODERN FOOTER STYLES --- */
+.footer {
+  background: #181818;
+  color: #eee;
+  padding: 50px 0 20px 0;
+  font-size: 15px;
+  margin-top: 0;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.footer-left {
+  flex: 1 1 250px;
+  margin-bottom: 20px;
+}
+.footer-left h3 {
+  font-size: 26px;
+  text-align: left;
+  margin-bottom: 12px;
+  color: #fff;
+}
+.footer-left p {
+  line-height: 1.7;
+  color: #bbb;
+}
+.footer-links {
+  flex: 1 1 180px;
+  margin-bottom: 20px;
+}
+.footer-links h4 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #fff;
+}
+.footer-links ul {
+  list-style: none;
+  padding-left: 0;
+}
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+.footer-links ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-links ul li a:hover {
+  color: red;
+}
+.footer-social {
+  flex: 1 1 180px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+.footer-social h4 {
+  color: #fff;
+  margin-bottom: 12px;
+}
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #222;
+  color: #fff;
+  font-size: 20px;
+  transition: background 0.3s, color 0.3s;
+  text-decoration: none;
+}
+.social-icons a:hover {
+  background: red;
+  color: #fff;
+}
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+  font-size: 14px;
+  color: #777;
+  margin-top: 20px;
+}
+@media (max-width: 900px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 0 20px;
+  }
+  .footer-social {
+    align-items: flex-start;
+  }
+}
+
+/* --- FORM CONTAINERS (Register, Forgot, Reset) --- */
+.register-container, .forgot-container, .reset-container {
+  background-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  padding: 80px 65px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.register-container h2, .forgot-container h2, .reset-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 26px;
+}
+section.register-section{
+  padding: 100px 100px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 100px;
+  padding-bottom: 250px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+button[type="submit"], .register-container button, .forgot-container button, .reset-container button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background-color: #e63946;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button[type="submit"]:hover, .register-container button:hover, .forgot-container button:hover, .reset-container button:hover {
+  background-color: #d32f2f;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.login-link a {
+  color: #ff3d00;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Error message style */
+.error-msg {
+  color: red;
+  margin-bottom: 15px;
+  text-align: center;
+  background: none;
+}
+
+/* Back Link */
+.back-link {
+  display: block;
+  margin-top: 15px;
+  text-align: center;
+  color: #ff3d00;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* Scrollable body content wrapper */
+.scroll-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.scroll-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  min-height: calc(100vh - 160px);
+}
+
+/* --- ADMIN DASHBOARD STYLES --- */
+.admin-dashboard body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+}
+.admin-dashboard h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #ff4b4b;
+}
+.admin-dashboard table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: transparent;
+    border: 1px solid #444;
+}
+.admin-dashboard th, .admin-dashboard td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #333;
+}
+.admin-dashboard th {
+    background-color:transparent;
+    color: #ff4b4b;
+}
+.admin-dashboard tr:nth-child(even) {
+    background-color: transparent;
+}
+.admin-dashboard tr:hover {
+    background-color: transparent;
+}
+.admin-dashboard select, .admin-dashboard button {
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+}
+.admin-dashboard select {
+    background-color: transparent;
+    color: #fff;
+}
+.admin-dashboard button {
+    background-color: #ff4b4b;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.admin-dashboard button:hover {
+    background-color: #e63939;
+}
+.admin-dashboard a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #ff4b4b;
+    text-decoration: none;
+    font-weight: bold;
+}
+.admin-dashboard a:hover {
+    text-decoration: underline;
+}
+
+/* --- STAFF DASHBOARD STYLES --- */
+.staff-dashboard body {
+    font-family: Arial, sans-serif;
+    background: url('../images/staff-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: black;
+    padding: 20px;
+    margin: 0;
+}
+.staff-dashboard h2, .staff-dashboard h3 {
+    color: red;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.staff-dashboard table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+.staff-dashboard th, .staff-dashboard td {
+    border: 1px solid red;
+    padding: 12px;
+    text-align: left;
+    color: black;
+}
+.staff-dashboard th {
+    background-color: rgba(255, 0, 0, 0.2);
+}
+.staff-dashboard textarea {
+    width: 100%;
+    background-color: white;
+    color: black;
+    border: 1px solid red;
+    padding: 6px;
+    resize: vertical;
+    font-size: 14px;
+}
+.staff-dashboard .query-box {
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 1px solid red;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    color: black;
+}
+.staff-dashboard button[type="submit"] {
+    background-color: transparent;
+    color: red;
+    border: 2px solid red;
+    padding: 6px 14px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.staff-dashboard button[type="submit"]:hover {
+    background-color: red;
+    color: white;
+}
+.staff-dashboard .logout-btn {
+    display: inline-block;
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s;
+    margin-top: 30px;
+}
+.staff-dashboard .logout-btn:hover {
+    background-color: darkred;
+    transform: scale(1.05);
+}
+
+
+/* --- SERVICES PAGE STYLES --- */
+.services-container {
+  width: 100vw;
+  margin: 0;
+  background: #000;
+  padding: 0;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+.about-container {
+  background: #000;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  border-radius: 0;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  padding: 0;
+  border-bottom: 1px solid #222;
+  margin: 0;
+}
+.about-container:last-child {
+  border-bottom: none;
+}
+.about-image {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0 40px 0;
+  background: #000;
+}
+.about-image img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  background: #000;
+}
+.about-text {
+  flex: 1 1 500px;
+  padding: 56px 56px 56px 56px;
+  background: #000;
+  border-radius: 18px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 320px;
+  box-shadow: 0 4px 32px rgba(230,57,70,0.08), 0 1.5px 8px rgba(0,0,0,0.18);
+  gap: 22px;
+}
+.service-title {
+  font-size: 2.4rem;
+  font-weight: 900;
+  margin-bottom: 0.5em;
+  letter-spacing: 1.5px;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(230,57,70,0.12);
+}
+.service-desc {
+  font-size: 1.25rem;
+  margin-bottom: 0.5em;
+  color: #e0e0e0;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+}
+.service-examples, .service-list {
+  margin-left: 0;
+  margin-bottom: 0.5em;
+  font-size: 1.08rem;
+  color: #f8dada;
+  line-height: 1.3;
+  padding-left: 18px;
+}
+.about-text ul {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-left: 1.2em;
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+.about-text li {
+  margin-bottom: 0.3em;
+  font-size: 1.08rem;
+  letter-spacing: 0.1px;
+}
+.see-more-btn {
+  background: #e63946;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 18px;
+  transition: background 0.2s, box-shadow 0.2s;
+  display: inline-block;
+  align-self: flex-start;
+  box-shadow: 0 2px 12px rgba(230,57,70,0.13);
+  letter-spacing: 1px;
+}
+.see-more-btn:hover {
+  background: #b71c1c;
+  box-shadow: 0 4px 24px rgba(230,57,70,0.18);
+}
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding-left: 0;
+    padding-right: 0;
+    min-height: unset;
+  }
+  .about-image {
+    padding: 20px 0 0 0;
+  }
+  .about-text {
+    margin: 0;
+    padding: 28px 10px 32px 10px;
+    border-radius: 12px;
+  }
+  .service-title {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .services-container {
+    padding: 0;
+  }
+  .service-title {
+    font-size: 1.1rem;
+  }
+  .about-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .about-text {
+    padding: 15px 5px 20px 5px;
+    border-radius: 8px;
+  }
+}
+
+.footer,
+.footer-content,
+.footer-left,
+.footer-links,
+.footer-social,
+.footer-bottom {
+  background: #000 !important;
+  background-color: #000 !important;
+}
+.about-container,
+.about-text,
+.about-image {
+  background: #000 !important;
+  background-color: #000 !important;
+}
+
+
+/* --- Program Pages Main Styles --- */
+/* Force override for program pages */
+body.program-page .program-section {
+    background-color: #111 !important;
+    padding: 120px 30px 60px !important;
+    min-height: 100vh !important;
+}
+
+.program-section {
+    background-color: #111 !important;
+    padding: 120px 30px 60px !important;
+    min-height: 100vh !important;
+}
+
+.program-section h2 {
+    font-size: 36px !important;
+    text-align: center !important;
+    margin-bottom: 50px !important;
+    color: red !important;
+}
+
+/* Force override for program rows */
+body.program-page .program-row {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 40px !important;
+    flex-wrap: wrap !important;
+    margin-bottom: 60px !important;
+}
+
+.program-row {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 40px !important;
+    flex-wrap: wrap !important;
+    margin-bottom: 60px !important;
+}
+
+/* Force override for program cards */
+body.program-page .program-card {
+    background-color: #222 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3) !important;
+    overflow: hidden !important;
+    transition: transform 0.3s ease !important;
+    width: 320px !important;
+    text-align: center !important;
+    padding: 20px !important;
+}
+
+.program-card {
+    background-color: #222 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3) !important;
+    overflow: hidden !important;
+    transition: transform 0.3s ease !important;
+    width: 320px !important;
+    text-align: center !important;
+    padding: 20px !important;
+}
+
+.program-card:hover {
+    transform: scale(1.03) !important;
+}
+
+.program-card h3 {
+    font-size: 22px !important;
+    color: red !important;
+    margin-bottom: 15px !important;
+}
+
+.program-card p {
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 15px !important;
+    color: white !important;
+}
+
+.schedule-title {
+    font-weight: bold !important;
+    color: #fff !important;
+    margin: 15px 0 10px 0 !important;
+    font-size: 16px !important;
+}
+
+.program-card ul {
+    text-align: left !important;
+    padding-left: 20px !important;
+}
+
+.program-card li {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 8px !important;
+    color: white !important;
+}
+
+/* --- Fitness Programs Page Specific Styles --- */
+body.fitness-programs-page {
+    background-color: #111 !important;
+    color: white !important;
+}
+
+.fitness-programs-section {
+    background-color: #111 !important;
+    padding: 120px 30px 60px !important;
+    min-height: 100vh !important;
+}
+
+.fitness-programs-title {
+    font-size: 36px !important;
+    text-align: center !important;
+    margin-bottom: 50px !important;
+    color: red !important;
+}
+
+.fitness-programs-row {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 40px !important;
+    flex-wrap: wrap !important;
+    margin-bottom: 60px !important;
+}
+
+.fitness-programs-card {
+    background-color: #222 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3) !important;
+    overflow: hidden !important;
+    transition: transform 0.3s ease !important;
+    width: 320px !important;
+    text-align: center !important;
+    padding: 20px !important;
+}
+
+.fitness-programs-card:hover {
+    transform: scale(1.03) !important;
+}
+
+.fitness-programs-card h3 {
+    font-size: 22px !important;
+    color: red !important;
+    margin-bottom: 15px !important;
+}
+
+.fitness-programs-card p {
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 15px !important;
+    color: white !important;
+}
+
+.fitness-programs-card ul {
+    text-align: left !important;
+    padding-left: 20px !important;
+}
+
+.fitness-programs-card li {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 8px !important;
+    color: white !important;
+}
+
+/* --- Equipment Page Specific Styles --- */
+body.equipment-page {
+    background-color: #111 !important;
+    color: white !important;
+}
+
+.equipment-section {
+    background-color: #111 !important;
+    padding: 120px 30px 60px !important;
+    min-height: 100vh !important;
+}
+
+.equipment-title {
+    font-size: 36px !important;
+    text-align: center !important;
+    margin-bottom: 50px !important;
+    color: red !important;
+}
+
+.equipment-row {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 40px !important;
+    flex-wrap: wrap !important;
+    margin-bottom: 60px !important;
+}
+
+.equipment-card {
+    background-color: #222 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3) !important;
+    overflow: hidden !important;
+    transition: transform 0.3s ease !important;
+    width: 320px !important;
+    text-align: center !important;
+    padding: 20px !important;
+}
+
+.equipment-card:hover {
+    transform: scale(1.03) !important;
+}
+
+.equipment-card h3 {
+    font-size: 22px !important;
+    color: red !important;
+    margin-bottom: 15px !important;
+}
+
+.equipment-card p {
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 15px !important;
+    color: white !important;
+}
+
+.equipment-card ul {
+    text-align: left !important;
+    padding-left: 20px !important;
+}
+
+.equipment-card li {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 8px !important;
+    color: white !important;
+}
+
+/* --- Training Sessions Page Specific Styles --- */
+body.training-sessions-page {
+    background-color: #111 !important;
+    color: white !important;
+}
+
+.training-sessions-section {
+    background-color: #111 !important;
+}
+
+.training-sessions-title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: red !important;
+}
+
+.training-sessions-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+
+.training-sessions-card {
+    background-color: #222 !important;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    width: 320px;
+    text-align: center;
+    padding: 20px;
+}
+
+.training-sessions-card:hover {
+    transform: scale(1.03);
+}
+
+/* --- Group Classes Page Specific Styles --- */
+body.group-classes-page {
+    background-color: #111 !important;
+    color: white !important;
+}
+
+.group-classes-section {
+    background-color: #111 !important;
+}
+
+.group-classes-title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: red !important;
+}
+
+.group-classes-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+
+.group-classes-card {
+    background-color: #222 !important;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    width: 320px;
+    text-align: center;
+    padding: 20px;
+}
+
+.group-classes-card:hover {
+    transform: scale(1.03);
+}
+
+/* --- Nutrition Counseling Page Specific Styles --- */
+body.nutrition-counseling-page {
+    background-color: #111 !important;
+    color: white !important;
+}
+
+.nutrition-counseling-section {
+    background-color: #111 !important;
+}
+
+.nutrition-counseling-title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: red !important;
+}
+
+.nutrition-counseling-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+
+.nutrition-counseling-card {
+    background-color: #222 !important;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    width: 320px;
+    text-align: center;
+    padding: 20px;
+}
+
+.nutrition-counseling-card:hover {
+    transform: scale(1.03) !important;
+}
+
+@media (max-width: 768px) {
+    .program-row {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .program-card {
+        width: 90% !important;
+    }
+    
+    .program-section {
+        padding: 100px 20px 40px !important;
+    }
+}
+
+/* --- Blog Page Styles --- */
+.blog-section {
+    padding: 120px 30px 60px;
+    min-height: 100vh;
+    background-color: #111;
+    color: white;
+}
+
+.blog-section h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: red;
+}
+
+.blog-category {
+    margin-bottom: 80px;
+}
+
+.category-title {
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 2px solid red;
+    padding-bottom: 10px;
+}
+
+.blog-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.blog-card {
+    background-color: #222;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 350px;
+    text-align: left;
+    border: 1px solid #333;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+.blog-content {
+    padding: 25px;
+}
+
+.blog-content h3 {
+    font-size: 20px;
+    color: red;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.blog-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.blog-content .description {
+    font-size: 13px;
+    color: #999;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .blog-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .blog-card {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .blog-section {
+        padding: 100px 20px 40px;
+    }
+}
+
+/* --- Membership Page Styles --- */
+body.membership-page {
+    background-color: #111 !important;
+    color: white !important;
+}
+
+.membership-section {
+    background-color: #111 !important;
+    padding: 120px 30px 60px !important;
+    min-height: 100vh !important;
+}
+
+.membership-section h2 {
+    font-size: 36px !important;
+    text-align: center !important;
+    margin-bottom: 50px !important;
+    color: red !important;
+}
+
+.membership-row {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 40px !important;
+    flex-wrap: wrap !important;
+    margin-bottom: 60px !important;
+}
+
+.membership-card {
+    background-color: #222 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3) !important;
+    overflow: hidden !important;
+    transition: transform 0.3s ease !important;
+    width: 320px !important;
+    text-align: center !important;
+}
+
+.membership-card:hover {
+    transform: scale(1.03) !important;
+}
+
+.membership-card img {
+    display: block !important;
+    margin: 0 auto !important;
+    max-width: 100% !important;
+    height: 220px !important;
+    object-fit: cover !important;
+    border-radius: 12px 12px 0 0 !important;
+}
+
+.membership-card-content {
+    padding: 20px !important;
+}
+
+.membership-card-content h3 {
+    font-size: 22px !important;
+    color: red !important;
+    margin-bottom: 10px !important;
+}
+
+.membership-card-content p {
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+    color: white !important;
+}
+
+.membership-card-content .price {
+    font-weight: bold !important;
+    font-size: 18px !important;
+    color: #fff !important;
+    margin-top: 10px !important;
+}
+
+@media (max-width: 768px) {
+    .membership-row {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .membership-card {
+        width: 90% !important;
+    }
+}
+/* --- Trainers Page Styles --- */
+ body {
+      background-color: #111;
+      color: white;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .trainer-section {
+      padding: 120px 30px 60px;
+      min-height: 100vh;
+    }
+
+    .trainer-section h2 {
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 50px;
+      color: red;
+    }
+
+    .trainer-row {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+
+    .card {
+      background-color: #222;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      width: 320px;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px 12px 0 0;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content h3 {
+      font-size: 22px;
+      color: red;
+      margin-bottom: 10px;
+    }
+
+    .card-content p {
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .card-content .specialty {
+      font-style: italic;
+      margin-top: 8px;
+      color: #ddd;
+    }
+
+    .card-content .price {
+      font-weight: bold;
+      font-size: 18px;
+      color: #fff;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .trainer-row {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 90%;
+      }
+    }
+/* --- Admin Manage Users Page Styles --- */
+.admin-users-page {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #fff;
+    padding: 40px;
+    min-height: 100vh;
+}
+
+.admin-users-page h2 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #222;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+.admin-table th, 
+.admin-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #333;
+    color: #fff;
+}
+
+.admin-table th {
+    background-color: #111;
+    color: red;
+}
+
+.admin-table tr:nth-child(even) {
+    background-color: #1a1a1a;
+}
+
+.admin-table tr:hover {
+    background-color: #333;
+}
+
+.role-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.role-form select {
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #000;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.role-form select:focus {
+    outline: none;
+    border-color: red;
+}
+
+.role-form button {
+    padding: 6px 12px;
+    background-color: rgb(105, 24, 24);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.role-form button:hover {
+    background-color: darkred;
+}
+
+.success-msg {
+    text-align: center;
+    color: #00ff66;
+    margin-bottom: 20px;
+}
+
+.error-msg {
+    text-align: center;
+    color: #ff4444;
+    margin-bottom: 20px;
+}
+
+.logout-btn {
+    display: inline-block;
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: darkred;
+}
+/* --- Customer Dashboard Styles --- */
+.customer-dashboard {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    color: #fff;
+    background-color:transparent;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgb(249, 245, 245);
+    text-align: center;
+}
+
+.customer-dashboard h2 {
+    color: red;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.dashboard-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.dashboard-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #222;
+    color: #fff;
+    border: 1px solid red;
+    border-radius: 6px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.dashboard-btn:hover {
+    background-color: red;
+    color: #fff;
+}
+
+.dashboard-btn.logout {
+    background-color: red;
+    border: 1px solid red;
+}
+
+.dashboard-btn.logout:hover {
+    background-color: darkred;
+    border-color: darkred;
+}
+
+.dashboard-divider {
+    margin: 30px 0;
+    border: 0;
+    border-top: 1px solid #444;
+}
+
+.queries-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.query-card {
+    background-color: #222;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.query-card:hover {
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+}
+
+.query-card p {
+    margin: 5px 0;
+}
+
+.query-card .staff-response {
+    color: #0f0;
+}
+
+.query-card .awaiting {
+    color: gray;
+}
+
+.query-card .query-date {
+    display: block;
+    font-size: 12px;
+    color: #888;
+    margin-top: 6px;
+}
+
+.no-query {
+    color: #ccc;
+    margin-top: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .customer-dashboard {
+        padding: 20px;
+    }
+    .dashboard-actions {
+        flex-direction: column;
+    }
+    .dashboard-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* --- Welcome Section for Customer Name --- */
+.welcome-section {
+    text-align: center;
+    background-color: #111;
+    color: white;
+    padding: 30px 20px;
+    border-bottom: 1px solid #333;
+    margin-bottom: 30px;
+}
+
+.welcome-section h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: red;
+}
+/* Profile Section */
+.profile-section {
+    text-align: center;
+    padding: 40px 20px 20px;
+    background-color: #111;
+    color: #fff;
+}
+
+.profile-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid red;
+    margin-bottom: 10px;
+}
+
+.profile-section h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+    color: red;
+}
+/* Two-Column Dashboard Layout */
+.two-column-dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Left Sidebar */
+.dashboard-left {
+    flex: 1 1 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile-box {
+    background-color: #222;
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(255,0,0,0.2);
+}
+
+.profile-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid red;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.profile-box h3 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.update-btn {
+    background-color: red;
+    border: 1px solid red;
+    margin-bottom: 8px;
+}
+
+.update-btn:hover {
+    background-color: darkred;
+}
+
+.logout {
+    background-color: #333;
+    border: 1px solid red;
+}
+
+.logout:hover {
+    background-color: darkred;
+    color: white;
+}
+
+/* Achievements */
+.achievement-section {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(255,0,0,0.2);
+}
+
+.achievement-section h3 {
+    color: red;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.achievement-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.achievement-section li {
+    background: #111;
+    color: #eee;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.achievement-section li strong {
+    color: red;
+    font-size: 18px;
+}
+
+/* Right Column */
+.dashboard-right {
+    flex: 2 1 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Top Buttons */
+.top-actions {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 15px;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(255,0,0,0.2);
+}
+
+/* Queries Section */
+.queries-section {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(255,0,0,0.2);
+}
+
+.queries-section h3 {
+    color: red;
+    margin-bottom: 15px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .two-column-dashboard {
+        flex-direction: column;
+    }
+}
+/* ===== Base Styles ===== */
+body.scroll-page {
+    background-color: #121212; /* assuming a dark background for white text */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== Appointment Form Container ===== */
+.appointment-frame {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 25px;
+    border: 2px solid white;
+    border-radius: 12px;
+    background-color: transparent;
+    box-shadow: 0 4px 12px rgba(255, 252, 252, 1);
+}
+
+.appointment-frame h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.appointment-frame input[type="text"],
+.appointment-frame input[type="datetime-local"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #222;
+    color: #fff;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.appointment-frame input:focus {
+    border-color: red;
+    outline: none;
+    box-shadow: 0 0 5px red;
+}
+
+/* Button */
+.appointment-frame button {
+    width: 100%;
+    padding: 12px;
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.appointment-frame button:hover {
+    background-color: darkred;
+}
+
+/* Success message */
+.success-msg {
+    text-align: center;
+    color: limegreen;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+/* ===== Submit Query Page Styles ===== */
+
+/* Section container */
+.submit-query-section {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 25px;
+    border: 2px solid white;
+    border-radius: 12px;
+    background-color: transparent;
+    box-shadow: 0 4px 12px rgba(255, 252, 252, 1);
+}
+
+/* Heading */
+.submit-query-section h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Textarea field */
+.submit-query-section textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #222;
+    color: #fff;
+    font-size: 14px;
+    resize: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-query-section textarea:focus {
+    border-color: red;
+    outline: none;
+    box-shadow: 0 0 5px red;
+}
+
+/* Submit button */
+.submit-query-section button {
+    width: 100%;
+    padding: 12px;
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-query-section button:hover {
+    background-color: darkred;
+}
+
+/* Success message */
+.success-msg {
+    text-align: center;
+    color: limegreen;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+/* ===== Staff Dashboard ===== */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+h2, h3 {
+    text-align: center;
+    color: rgb(248, 247, 247);
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #222;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+table td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+
+table th {
+    background-color: rgb(95, 11, 11);
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #1a1a1a;
+}
+
+.success {
+    color: limegreen;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Query Box */
+.query-box {
+    background-color: #1a1a1a;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
+}
+
+.query-box strong {
+    color: red;
+}
+
+.query-box textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #222;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 6px;
+    margin-top: 5px;
+    resize: none;
+}
+
+.query-box textarea:focus {
+    border-color: red;
+    outline: none;
+}
+
+.query-box button {
+    margin-top: 10px;
+    background-color: rgba(95, 11, 11);
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.query-box button:hover {
+    background-color: darkred;
+}
+
+/* Logout button */
+.logout-btn {
+    display: inline-block;
+    background-color: red;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: darkred;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+.alert {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+.success {
+    background-color: #4CAF50;
+    color: white;
+}
+.error {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Hero Section */
+.hero {
+    text-align: left;
+    padding: 100px 20px;
+}
+
+
+/* About Section */
+#about {
+    background: url('../images/about-bg.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 50px 20px;
+    color: white;
+}
+
+.about-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.about-text {
+    flex: 1 1 500px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    margin: 20px;
+}
+.about-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+.about-text p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* Contact Section */
+#contact {
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 50px 20px;
+    color: white;
+}
+.contact-text {
+    flex: 1 1 500px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    margin: 20px;
+}
+.contact-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+.contact-text p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+}
+
+.contact-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* Background image fix for full screen */
+#about, #contact {
+    background-size: cover;
+    background-position: center;
+}
+/* Profile Update Frame - Similar to Appointment Page */
+.profile-frame {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 25px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 12px;
+    background-color:transparent;
+    box-shadow: 0 4px 12px rgb(255, 255, 255);
+}
+
+.profile-frame h2 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.profile-frame input[type="text"],
+.profile-frame input[type="email"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #222;
+    color: #fff;
+    font-size: 14px;
+}
+
+.profile-frame input:focus {
+    border-color: red;
+    outline: none;
+    box-shadow: 0 0 5px red;
+}
+
+/* Button */
+.profile-frame button {
+    width: 100%;
+    padding: 12px;
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.profile-frame button:hover {
+    background-color: darkred;
+}
+
+/* Success message */
+.success-msg {
+    text-align: center;
+    color: limegreen;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Back Link */
+.back-link {
+    display: block;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.back-link:hover {
+    color: red;
+}
+
+
 
 

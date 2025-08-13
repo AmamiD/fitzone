@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Search - FitZone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Training Sessions | FitZone</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="scroll-page">
+<body class="program-page training-sessions-page">
+    <!-- Navbar -->
     <header class="navbar">
         <div class="logo">
             <img src="images/logo.png" alt="FitZone Logo">
@@ -27,21 +29,79 @@
             </a>
         </div>
     </header>
-    <main class="scroll-content">
-        <?php
-        require 'includes/db.php';
-        $q = $_GET['q'];
-        $sql = "SELECT * FROM classes WHERE name LIKE ?";
-        $stmt = $conn->prepare($sql);
-        $searchTerm = "%$q%";
-        $stmt->bind_param("s", $searchTerm);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        while ($row = $result->fetch_assoc()) {
-            echo "<p>" . $row['name'] . "</p>";
-        }
-        ?>
+    <main>
+        <section class="program-section training-sessions-section">
+            <h2 class="training-sessions-title">Our Personalized Training Sessions</h2>
+            <div class="program-row training-sessions-row">
+                <!-- Initial Fitness Assessment -->
+                <div class="program-card training-sessions-card">
+                    <h3>Initial Fitness Assessment</h3>
+                    <p>A one-on-one evaluation to understand your current fitness level, health history, body measurements, and goals. This helps your trainer design a program tailored just for you.</p>
+                    <div class="schedule-title">Includes:</div>
+                    <ul>
+                        <li>BMI & body fat analysis</li>
+                        <li>Strength & flexibility tests</li>
+                        <li>Cardiovascular endurance check</li>
+                        <li>Goal-setting discussion</li>
+                    </ul>
+                    <div class="schedule-title">Schedule:</div>
+                    <ul>
+                        <li><b>Day 1:</b> 45-minute assessment before beginning training</li>
+                        <li>Reassessed every 4-6 weeks to track progress</li>
+                    </ul>
+                </div>
+                <!-- Customized Workout & Nutrition Plan -->
+                <div class="program-card training-sessions-card">
+                    <h3>Customized Workout & Nutrition Plan</h3>
+                    <p>Your trainer creates a personalized training and meal plan that aligns with your fitness goals, body type, and lifestyle. The plan is updated based on progress.</p>
+                    <div class="schedule-title">Includes:</div>
+                    <ul>
+                        <li>Weekly training routine (strength, cardio, recovery)</li>
+                        <li>Daily/weekly meal guidelines (calories, macros, timing)</li>
+                        <li>Food substitutions and snack ideas</li>
+                    </ul>
+                    <div class="schedule-title">Schedule Example:</div>
+                    <ul>
+                        <li>Plan reviewed every week</li>
+                        <li>Updated every 4 weeks for adaptation</li>
+                    </ul>
+                </div>
+                <!-- Regular Progress Tracking & Adaptation -->
+                <div class="program-card training-sessions-card">
+                    <h3>Regular Progress Tracking & Adaptation</h3>
+                    <p>Progress is monitored using performance tests, body measurements, and photos. The trainer adjusts your workouts and nutrition based on the data to keep results coming.</p>
+                    <div class="schedule-title">Tracking Tools:</div>
+                    <ul>
+                        <li>Weight & measurement logs</li>
+                        <li>Monthly photos</li>
+                        <li>Strength & cardio performance benchmarks</li>
+                    </ul>
+                    <div class="schedule-title">Schedule:</div>
+                    <ul>
+                        <li><b>Weekly:</b> Weight & nutrition review</li>
+                        <li><b>Monthly:</b> Full body measurement & plan adjustment</li>
+                    </ul>
+                </div>
+                <!-- Motivation & Accountability Sessions -->
+                <div class="program-card training-sessions-card">
+                    <h3>Motivation & Accountability Sessions</h3>
+                    <p>Stay on track with weekly check-ins, encouragement, and mindset coaching. Your trainer will keep you motivated and help overcome challenges.</p>
+                    <div class="schedule-title">Includes:</div>
+                    <ul>
+                        <li>1-on-1 feedback sessions</li>
+                        <li>Weekly SMS/WhatsApp/email motivation</li>
+                        <li>Goal reminders and mental focus exercises</li>
+                    </ul>
+                    <div class="schedule-title">Schedule:</div>
+                    <ul>
+                        <li><b>Weekly:</b> 15-min check-in (in-person or virtual)</li>
+                        <li>Daily/alternate-day motivational messages or prompts</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </main>
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-left">
@@ -82,4 +142,4 @@
         </div>
     </footer>
 </body>
-</html>
+</html> 

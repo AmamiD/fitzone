@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Search - FitZone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Classes | FitZone</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="scroll-page">
+<body class="program-page group-classes-page">
+    <!-- Navbar -->
     <header class="navbar">
         <div class="logo">
             <img src="images/logo.png" alt="FitZone Logo">
@@ -27,21 +29,80 @@
             </a>
         </div>
     </header>
-    <main class="scroll-content">
-        <?php
-        require 'includes/db.php';
-        $q = $_GET['q'];
-        $sql = "SELECT * FROM classes WHERE name LIKE ?";
-        $stmt = $conn->prepare($sql);
-        $searchTerm = "%$q%";
-        $stmt->bind_param("s", $searchTerm);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        while ($row = $result->fetch_assoc()) {
-            echo "<p>" . $row['name'] . "</p>";
-        }
-        ?>
+    <main>
+        <section class="program-section group-classes-section">
+            <h2 class="group-classes-title">Our Group Classes</h2>
+            
+            <!-- First Row - 3 Classes -->
+            <div class="program-row group-classes-row">
+                <!-- Yoga -->
+                <div class="program-card group-classes-card">
+                    <h3>Yoga</h3>
+                    <p>Improve flexibility, posture, and mental clarity through a mix of Hatha, Vinyasa, and Restorative yoga styles. Ideal for all levels and perfect for stress relief and recovery.</p>
+                    <div class="schedule-title">Schedule:</div>
+                    <ul>
+                        <li><b>Monday:</b> Gentle Flow Yoga – 6:30 AM</li>
+                        <li><b>Wednesday:</b> Power Yoga – 6:00 PM</li>
+                        <li><b>Friday:</b> Restorative Yoga – 7:00 PM</li>
+                        <li><b>Sunday:</b> Morning Vinyasa – 7:30 AM</li>
+                    </ul>
+                </div>
+                <!-- Cardio Blast -->
+                <div class="program-card group-classes-card">
+                    <h3>Cardio Blast</h3>
+                    <p>A high-energy class combining aerobics, dance, and interval training. Designed to torch calories, improve stamina, and keep your heart rate elevated.</p>
+                    <div class="schedule-title">Schedule:</div>
+                    <ul>
+                        <li><b>Monday:</b> Morning Blast – 7:00 AM</li>
+                        <li><b>Tuesday:</b> Lunchtime Burn – 12:30 PM</li>
+                        <li><b>Thursday:</b> Evening Cardio Jam – 6:00 PM</li>
+                        <li><b>Saturday:</b> Weekend Sweat – 9:00 AM</li>
+                    </ul>
+                </div>
+                <!-- Strength Training Group -->
+                <div class="program-card group-classes-card">
+                    <h3>Strength Training Group</h3>
+                    <p>Focus on building lean muscle through guided group lifting sessions using dumbbells, barbells, and bodyweight. Great for toning, shaping, and boosting strength.</p>
+                    <div class="schedule-title">Schedule:</div>
+                    <ul>
+                        <li><b>Monday:</b> Upper Body Focus – 5:00 PM</li>
+                        <li><b>Wednesday:</b> Lower Body Strength – 7:00 AM</li>
+                        <li><b>Friday:</b> Full-Body Power – 6:00 PM</li>
+                        <li><b>Sunday:</b> Core & Conditioning – 8:00 AM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Second Row - 2 Classes -->
+            <div class="program-row group-classes-row">
+                <!-- HIIT -->
+                <div class="program-card group-classes-card">
+                    <h3>HIIT (High-Intensity Interval Training)</h3>
+                    <p>Intense, short bursts of exercise followed by brief recovery periods. Ideal for fat burning, metabolic boost, and quick fitness gains in less time.</p>
+                    <div class="schedule-title">Schedule:</div>
+                    <ul>
+                        <li><b>Tuesday:</b> 20-Min Express HIIT – 7:30 AM</li>
+                        <li><b>Thursday:</b> HIIT + Abs – 6:30 PM</li>
+                        <li><b>Saturday:</b> Tabata Style HIIT – 8:30 AM</li>
+                        <li><b>Sunday:</b> HIIT Challenge – 5:00 PM</li>
+                    </ul>
+                </div>
+                <!-- Zumba -->
+                <div class="program-card group-classes-card">
+                    <h3>Zumba</h3>
+                    <p>A fun, dance-based cardio workout combining Latin rhythms and energetic choreography. Burn calories, improve coordination, and enjoy every beat!</p>
+                    <div class="schedule-title">Schedule:</div>
+                    <ul>
+                        <li><b>Monday:</b> Zumba Fit – 6:00 PM</li>
+                        <li><b>Wednesday:</b> Dance & Burn – 7:00 PM</li>
+                        <li><b>Friday:</b> Party Friday Zumba – 5:30 PM</li>
+                        <li><b>Saturday:</b> Morning Dance Vibes – 10:00 AM</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </main>
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-left">
@@ -82,4 +143,4 @@
         </div>
     </footer>
 </body>
-</html>
+</html> 

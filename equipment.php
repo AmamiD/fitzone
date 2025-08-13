@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Search - FitZone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> State-of-the-Art Equipments | FitZone</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="scroll-page">
+<body class="program-page equipment-page">
+    <!-- Navbar -->
     <header class="navbar">
         <div class="logo">
             <img src="images/logo.png" alt="FitZone Logo">
@@ -16,7 +18,7 @@
                 <li><a href="membership.php">Membership</a></li>
                 <li><a href="services.php">Services</a></li>
                 <li><a href="trainers.php">Trainers</a></li>
-                <li><a href="blog.php">Blog</a></li>
+                <li><a href="#blog">Blog</a></li>
                 <li><a href="index.php#contact">Contact Us</a></li>
             </ul>
         </nav>
@@ -27,21 +29,59 @@
             </a>
         </div>
     </header>
-    <main class="scroll-content">
-        <?php
-        require 'includes/db.php';
-        $q = $_GET['q'];
-        $sql = "SELECT * FROM classes WHERE name LIKE ?";
-        $stmt = $conn->prepare($sql);
-        $searchTerm = "%$q%";
-        $stmt->bind_param("s", $searchTerm);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        while ($row = $result->fetch_assoc()) {
-            echo "<p>" . $row['name'] . "</p>";
-        }
-        ?>
+    <main>
+        <section class="program-section equipment-section">
+            <h2 class="equipment-title">Our State-of-the-Art Equipments</h2>
+            <div class="program-row equipment-row">
+                <!-- Cardio Equipment -->
+                <div class="program-card equipment-card">
+                    <h3>Cardio Equipments</h3>
+                    <p>Boost endurance, burn calories, and improve heart health using high-quality machines like treadmills, cross trainers, rowing machines, and stair climbers.</p>
+                    <div class="schedule-title">Sample Weekly Cardio Schedule:</div>
+                    <ul>
+                        <li><b>Monday:</b> Treadmill Intervals – 30 mins</li>
+                        <li><b>Tuesday:</b> Cross Trainer Steady Pace – 25 mins</li>
+                        <li><b>Wednesday:</b> Rowing Machine HIIT – 20 mins</li>
+                        <li><b>Thursday:</b> Stair Climber Challenge – 30 mins</li>
+                        <li><b>Friday:</b> Combo: Treadmill + Rowing – 40 mins</li>
+                        <li><b>Saturday:</b> Outdoor Cardio or Group Class</li>
+                        <li><b>Sunday:</b> Rest or Light Walking</li>
+                    </ul>
+                </div>
+                <!-- Strength Equipment -->
+                <div class="program-card">
+                    <h3>Strength Equipments</h3>
+                    <p>Build muscle, enhance bone density, and improve core strength using tools like Smith machines, barbells, dumbbells, and resistance machines. Ideal for full-body or targeted muscle group workouts.</p>
+                    <div class="schedule-title">Sample Weekly Strength Schedule:</div>
+                    <ul>
+                        <li><b>Monday:</b> Upper Body (Dumbbells & Smith Machine) – 60 mins</li>
+                        <li><b>Tuesday:</b> Lower Body (Barbell Squats, Leg Press) – 60 mins</li>
+                        <li><b>Wednesday:</b> Core + Resistance Machines – 45 mins</li>
+                        <li><b>Thursday:</b> Full-Body Circuit – 60 mins</li>
+                        <li><b>Friday:</b> Free Weight Challenge (Barbell & Dumbbell Mix) – 60 mins</li>
+                        <li><b>Saturday:</b> Recovery + Light Resistance – 30 mins</li>
+                        <li><b>Sunday:</b> Rest</li>
+                    </ul>
+                </div>
+                <!-- Functional Training Equipment -->
+                <div class="program-card">
+                    <h3>Functional Training Equipments</h3>
+                    <p>Improve agility, coordination, and real-life movement strength with tools like kettlebells, battle ropes, medicine balls, and TRX suspension systems. Great for athletes and dynamic workout lovers.</p>
+                    <div class="schedule-title">Sample Weekly Functional Schedule:</div>
+                    <ul>
+                        <li><b>Monday:</b> TRX Bodyweight Strength + Core – 45 mins</li>
+                        <li><b>Tuesday:</b> Kettlebell Complexes – 30 mins</li>
+                        <li><b>Wednesday:</b> Battle Rope Intervals – 20 mins</li>
+                        <li><b>Thursday:</b> Medicine Ball Partner Drills – 30 mins</li>
+                        <li><b>Friday:</b> Mixed Functional Circuit (All Equipment) – 45 mins</li>
+                        <li><b>Saturday:</b> Obstacle Challenge or Bootcamp Style – 60 mins</li>
+                        <li><b>Sunday:</b> Stretch + Mobility Work</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </main>
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-left">
@@ -82,4 +122,4 @@
         </div>
     </footer>
 </body>
-</html>
+</html> 

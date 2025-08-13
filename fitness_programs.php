@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Search - FitZone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Programs | FitZone</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="scroll-page">
+<body class="program-page fitness-programs-page">
+    <!-- Navbar -->
     <header class="navbar">
         <div class="logo">
             <img src="images/logo.png" alt="FitZone Logo">
@@ -27,21 +29,59 @@
             </a>
         </div>
     </header>
-    <main class="scroll-content">
-        <?php
-        require 'includes/db.php';
-        $q = $_GET['q'];
-        $sql = "SELECT * FROM classes WHERE name LIKE ?";
-        $stmt = $conn->prepare($sql);
-        $searchTerm = "%$q%";
-        $stmt->bind_param("s", $searchTerm);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        while ($row = $result->fetch_assoc()) {
-            echo "<p>" . $row['name'] . "</p>";
-        }
-        ?>
+    <main>
+        <section class="program-section fitness-programs-section">
+            <h2 class="fitness-programs-title">Our Fitness Programs</h2>
+            <div class="program-row fitness-programs-row">
+                <!-- Weight Loss Program -->
+                <div class="program-card fitness-programs-card">
+                    <h3>Weight Loss Program</h3>
+                    <p> A fat-burning program designed to help members shed excess weight through a combination of cardio, strength training, and diet support. Perfect for beginners or anyone looking to get lean and fit.</p>
+                    <div class="schedule-title">Weekly Schedule:</div>
+                    <ul>
+                        <li><b>Monday:</b> Cardio Intervals (Treadmill & Rowing) – 45 mins</li>
+                        <li><b>Tuesday:</b> Full-Body Strength Circuit – 60 mins</li>
+                        <li><b>Wednesday:</b> Low-Impact Cardio + Core – 45 mins</li>
+                        <li><b>Thursday:</b> HIIT Class – 40 mins</li>
+                        <li><b>Friday:</b> Nutrition Review + Light Cardio – 30 mins</li>
+                        <li><b>Saturday:</b> Group Bootcamp (Outdoor) – 60 mins</li>
+                        <li><b>Sunday:</b> Rest or optional Yoga Recovery – 45 mins</li>
+                    </ul>
+                </div>
+                <!-- Muscle Gain Plan -->
+                <div class="program-card fitness-programs-card">
+                    <h3>Muscle Gain Plan</h3>
+                    <p> A structured strength-building program focused on progressive overload, resistance training, and high-protein diet strategies to support lean muscle development.</p>
+                    <div class="schedule-title">Weekly Schedule:</div>
+                    <ul>
+                        <li><b>Monday:</b> Upper Body Strength (Chest, Shoulders, Triceps) – 60 mins</li>
+                        <li><b>Tuesday:</b> Lower Body Power (Legs, Glutes) – 60 mins</li>
+                        <li><b>Wednesday:</b> Active Recovery (Stretch + Foam Rolling) – 30 mins</li>
+                        <li><b>Thursday:</b> Back & Biceps + Core Stability – 60 mins</li>
+                        <li><b>Friday:</b> Full-Body Compound Lifts (Squats, Deadlifts, Presses) – 75 mins</li>
+                        <li><b>Saturday:</b> Nutrition Check-in + Mobility Drills – 30 mins</li>
+                        <li><b>Sunday:</b> Rest or Optional Cardio – 30 mins</li>
+                    </ul>
+                </div>
+                <!-- Senior Fitness Program -->
+                <div class="program-card fitness-programs-card">
+                    <h3>Senior Fitness Program</h3>
+                    <p> A gentle, low-impact fitness plan specially designed for older adults to improve mobility, flexibility, balance, and functional strength in a safe environment.</p>
+                    <div class="schedule-title">Weekly Schedule:</div>
+                    <ul>
+                        <li><b>Monday:</b> Light Cardio + Joint Mobility – 30 mins</li>
+                        <li><b>Tuesday:</b> Seated Strength Exercises – 30 mins</li>
+                        <li><b>Wednesday:</b> Balance & Core Training – 30 mins</li>
+                        <li><b>Thursday:</b> Gentle Yoga or Tai Chi – 45 mins</li>
+                        <li><b>Friday:</b> Resistance Band Training – 30 mins</li>
+                        <li><b>Saturday:</b> Walking Club or Group Stretch – 45 mins</li>
+                        <li><b>Sunday:</b> Rest or Mindful Breathing – 20 mins</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </main>
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-left">
@@ -82,4 +122,4 @@
         </div>
     </footer>
 </body>
-</html>
+</html> 

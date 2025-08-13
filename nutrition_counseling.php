@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Search - FitZone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Counseling | FitZone</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="scroll-page">
+<body class="program-page nutrition-counseling-page">
+    <!-- Navbar -->
     <header class="navbar">
         <div class="logo">
             <img src="images/logo.png" alt="FitZone Logo">
@@ -27,21 +29,49 @@
             </a>
         </div>
     </header>
-    <main class="scroll-content">
-        <?php
-        require 'includes/db.php';
-        $q = $_GET['q'];
-        $sql = "SELECT * FROM classes WHERE name LIKE ?";
-        $stmt = $conn->prepare($sql);
-        $searchTerm = "%$q%";
-        $stmt->bind_param("s", $searchTerm);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        while ($row = $result->fetch_assoc()) {
-            echo "<p>" . $row['name'] . "</p>";
-        }
-        ?>
+    <main>
+        <section class="program-section nutrition-counseling-section">
+            <h2 class="nutrition-counseling-title">Our Nutrition Counseling</h2>
+            <div class="program-row nutrition-counseling-row">
+                <!-- Personalized Meal Planning -->
+                <div class="program-card nutrition-counseling-card">
+                    <h3>Personalized Meal Planning</h3>
+                    <p>Custom meal plans designed around your fitness goals, lifestyle, food preferences, and daily schedule. These plans ensure balanced nutrition, proper calorie intake, and long-term healthy eating habits.</p>
+                    <div class="schedule-title">What It Includes:</div>
+                    <ul>
+                        <li>Weekly meal charts (breakfast, lunch, dinner, snacks)</li>
+                        <li>Grocery lists and portion sizes</li>
+                        <li>Vegetarian, vegan, and high-protein options available</li>
+                    </ul>
+                    <div class="schedule-title">Schedule:</div>
+                    <ul>
+                        <li><b>Initial Consultation (Week 1):</b> 30–45 mins – Nutritionist meets with the member to discuss needs</li>
+                        <li><b>Meal Plan Delivery:</b> Within 2 days of consultation (via email or app)</li>
+                        <li><b>Weekly Check-In (Every 7 days):</b> 15–20 mins – Adjust meals as needed</li>
+                    </ul>
+                </div>
+                <!-- Diet Adjustment for Specific Goals -->
+                <div class="program-card nutrition-counseling-card">
+                    <h3>Diet Adjustment for Specific Goals</h3>
+                    <p>Tailored diet plans and real-time adjustments for members targeting fat loss, muscle gain, or managing health conditions like diabetes, PCOS, or high cholesterol.</p>
+                    <div class="schedule-title">What It Includes:</div>
+                    <ul>
+                        <li>Macronutrient adjustment (protein, carbs, fats)</li>
+                        <li>Sugar & salt monitoring (for diabetic/hypertensive clients)</li>
+                        <li>Regular reviews based on body response or blood reports</li>
+                    </ul>
+                    <div class="schedule-title">Schedule:</div>
+                    <ul>
+                        <li><b>Week 1:</b> Assessment + goal-based diet setup – 45 mins</li>
+                        <li><b>Week 2 & 3:</b> Follow-up review – 15 mins</li>
+                        <li><b>Week 4:</b> Full plan re-evaluation and adjustment – 30 mins</li>
+                        <li><b>Ongoing:</b> Monthly progress meeting or lab report review if needed</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </main>
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-left">
@@ -82,4 +112,4 @@
         </div>
     </footer>
 </body>
-</html>
+</html> 

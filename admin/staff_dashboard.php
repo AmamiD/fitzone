@@ -13,7 +13,7 @@ if ($_SESSION['user_role'] !== 'staff') {
 <head>
     <meta charset="UTF-8">
     <title>Staff Dashboard</title>
-    <link rel="stylesheet" href="../css/staff-dashboard.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <h2>Staff Dashboard</h2>
