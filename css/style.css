@@ -17,15 +17,12 @@ body {
   line-height: 1.6;
 }
 
-<<<<<<< HEAD
 /* Override for program pages */
 body.program-page {
   background-color: #111 !important;
   color: white !important;
 }
 
-=======
->>>>>>> f5cc3ee8381071c5140951148f0260daaa9a9787
 /* --- NAVBAR STYLES --- */
 .navbar {
   display: flex;
@@ -583,10 +580,7 @@ body.scroll-page {
 }
 .footer-left h3 {
   font-size: 26px;
-<<<<<<< HEAD
   text-align: left;
-=======
->>>>>>> f5cc3ee8381071c5140951148f0260daaa9a9787
   margin-bottom: 12px;
   color: #fff;
 }
@@ -689,7 +683,6 @@ body.scroll-page {
   margin-bottom: 25px;
   font-size: 26px;
 }
-<<<<<<< HEAD
 section.register-section{
   padding: 100px 100px;
   padding-left: 100px;
@@ -697,8 +690,6 @@ section.register-section{
   padding-top: 100px;
   padding-bottom: 250px;
 }
-=======
->>>>>>> f5cc3ee8381071c5140951148f0260daaa9a9787
 
 input[type="text"],
 input[type="email"],
@@ -930,7 +921,6 @@ button[type="submit"]:hover, .register-container button:hover, .forgot-container
     transform: scale(1.05);
 }
 
-<<<<<<< HEAD
 
 /* --- SERVICES PAGE STYLES --- */
 .services-container {
@@ -2576,6 +2566,4 @@ html {
 
 
 
-=======
->>>>>>> f5cc3ee8381071c5140951148f0260daaa9a9787
 

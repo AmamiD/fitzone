@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <title>Book Appointment - FitZone</title>
     <link rel="stylesheet" href="css/style.css">
-<<<<<<< HEAD
    
-=======
->>>>>>> f5cc3ee8381071c5140951148f0260daaa9a9787
 </head>
 <body class="scroll-page">
     <header class="navbar">
@@ -18,17 +15,10 @@
             <ul class="nav-links">
                 <li><a href="index.php">Home</a></li>
                 <li><a href="membership.php">Membership</a></li>
-<<<<<<< HEAD
                 <li><a href="services.php">Services</a></li>
                 <li><a href="trainers.php">Trainers</a></li>
                 <li><a href="blog.php">Blog</a></li>
                 <li><a href="index.php#contact">Contact Us</a></li>
-=======
-                <li><a href="#services">Services</a></li>
-                <li><a href="trainers.php">Trainers</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact Us</a></li>
->>>>>>> f5cc3ee8381071c5140951148f0260daaa9a9787
             </ul>
         </nav>
         <div class="nav-right">
@@ -54,7 +44,6 @@
         }
         ?>
         <section class="book-appointment-section">
-<<<<<<< HEAD
             <div class="appointment-frame">
                 <h2>Book an Appointment</h2>
                 <form method="POST">
@@ -66,17 +55,6 @@
         </section>
     </main>
      <footer class="footer">
-=======
-            <h2>Book an Appointment</h2>
-            <form method="POST">
-                <input name="class" placeholder="Class Name" required>
-                <input type="datetime-local" name="date_time" required>
-                <button type="submit">Book</button>
-            </form>
-        </section>
-    </main>
-    <footer class="footer">
->>>>>>> f5cc3ee8381071c5140951148f0260daaa9a9787
         <div class="footer-content">
             <div class="footer-left">
                 <h3>FitZone Fitness Center</h3>
@@ -87,17 +65,10 @@
                 <ul>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="membership.php">Membership</a></li>
-<<<<<<< HEAD
                     <li><a href="services.php">Services</a></li>
                     <li><a href="trainers.php">Trainers</a></li>
                     <li><a href="blog.php">Blog</a></li>
                     <li><a href="index.php#contact">Contact</a></li>
-=======
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="trainers.php">Trainers</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#contact">Contact</a></li>
->>>>>>> f5cc3ee8381071c5140951148f0260daaa9a9787
                 </ul>
             </div>
             <div class="footer-social">

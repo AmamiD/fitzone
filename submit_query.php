@@ -14,17 +14,10 @@
             <ul class="nav-links">
                 <li><a href="index.php">Home</a></li>
                 <li><a href="membership.php">Membership</a></li>
-<<<<<<< HEAD
                 <li><a href="services.php">Services</a></li>
                 <li><a href="trainers.php">Trainers</a></li>
                 <li><a href="blog.php">Blog</a></li>
                 <li><a href="index.php#contact">Contact Us</a></li>
-=======
-                <li><a href="#services">Services</a></li>
-                <li><a href="trainers.php">Trainers</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact Us</a></li>
->>>>>>> f5cc3ee8381071c5140951148f0260daaa9a9787
             </ul>
         </nav>
         <div class="nav-right">
@@ -67,17 +60,10 @@
                 <ul>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="membership.php">Membership</a></li>
-<<<<<<< HEAD
                     <li><a href="services.php">Services</a></li>
                     <li><a href="trainers.php">Trainers</a></li>
                     <li><a href="blog.php">Blog</a></li>
                     <li><a href="index.php#contact">Contact</a></li>
-=======
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="trainers.php">Trainers</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#contact">Contact</a></li>
->>>>>>> f5cc3ee8381071c5140951148f0260daaa9a9787
                 </ul>
             </div>
             <div class="footer-social">
