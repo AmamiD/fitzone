@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 include 'includes/auth.php';
 require 'includes/db.php';
@@ -23,6 +24,8 @@ $stmt->bind_result($customer_name);
 $stmt->fetch();
 $stmt->close();
 ?>
+=======
+>>>>>>> f5cc3ee8381071c5140951148f0260daaa9a9787
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,10 +42,17 @@ $stmt->close();
             <ul class="nav-links">
                 <li><a href="index.php">Home</a></li>
                 <li><a href="membership.php">Membership</a></li>
+<<<<<<< HEAD
                 <li><a href="services.php">Services</a></li>
                 <li><a href="trainers.php">Trainers</a></li>
                 <li><a href="blog.php">Blog</a></li>
                 <li><a href="index.php#contact">Contact Us</a></li>
+=======
+                <li><a href="#services">Services</a></li>
+                <li><a href="trainers.php">Trainers</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+>>>>>>> f5cc3ee8381071c5140951148f0260daaa9a9787
             </ul>
         </nav>
         <div class="nav-right">
@@ -52,6 +62,7 @@ $stmt->close();
             </a>
         </div>
     </header>
+<<<<<<< HEAD
 
     <main class="scroll-content">
         <section class="dashboard-section customer-dashboard two-column-dashboard">
@@ -118,6 +129,55 @@ $stmt->close();
     </main>
 
      <footer class="footer">
+=======
+    <main class="scroll-content">
+        <?php
+        include 'includes/auth.php';
+        require 'includes/db.php';
+        check_login();
+        $role = $_SESSION['user_role'];
+        if ($role === 'admin') {
+            header("Location: admin/manage_users.php");
+            exit();
+        }
+        if ($role === 'staff') {
+            header("Location: admin/staff_dashboard.php");
+            exit();
+        }
+        $user_id = $_SESSION['user_id'];
+        ?>
+        <section class="dashboard-section">
+            <h2>Customer Dashboard</h2>
+            <a href="book_appointment.php">Book Appointment</a><br>
+            <a href="submit_query.php">Submit Query</a><br>
+            <a href="logout.php">Logout</a><br>
+            <a href="update_profile.php">Update Profile</a><br>
+            <hr>
+            <h3>Your Queries and Staff Responses</h3>
+            <?php
+            $result = $conn->prepare("SELECT message, response, submitted_at FROM queries WHERE user_id = ? ORDER BY submitted_at DESC");
+            $result->bind_param("i", $user_id);
+            $result->execute();
+            $res = $result->get_result();
+            if ($res->num_rows > 0) {
+                while ($row = $res->fetch_assoc()) {
+                    echo "<div style='border:1px solid #ccc; padding:10px; margin:10px 0'>";
+                    echo "<p><strong>Your Message:</strong> {$row['message']}</p>";
+                    if ($row['response']) {
+                        echo "<p><strong>Staff Response:</strong> {$row['response']}</p>";
+                    } else {
+                        echo "<p style='color:gray;'><em>Awaiting staff response...</em></p>";
+                    }
+                    echo "</div>";
+                }
+            } else {
+                echo "<p>You have not submitted any queries yet.</p>";
+            }
+            ?>
+        </section>
+    </main>
+    <footer class="footer">
+>>>>>>> f5cc3ee8381071c5140951148f0260daaa9a9787
         <div class="footer-content">
             <div class="footer-left">
                 <h3>FitZone Fitness Center</h3>
@@ -128,10 +188,17 @@ $stmt->close();
                 <ul>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="membership.php">Membership</a></li>
+<<<<<<< HEAD
                     <li><a href="services.php">Services</a></li>
                     <li><a href="trainers.php">Trainers</a></li>
                     <li><a href="blog.php">Blog</a></li>
                     <li><a href="index.php#contact">Contact</a></li>
+=======
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="trainers.php">Trainers</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+>>>>>>> f5cc3ee8381071c5140951148f0260daaa9a9787
                 </ul>
             </div>
             <div class="footer-social">

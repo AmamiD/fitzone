@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <title>Update Profile - FitZone</title>
     <link rel="stylesheet" href="css/style.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="css/profile.css"> <!-- New external CSS -->
+=======
+>>>>>>> f5cc3ee8381071c5140951148f0260daaa9a9787
 </head>
 <body class="scroll-page">
     <header class="navbar">
@@ -15,10 +18,17 @@
             <ul class="nav-links">
                 <li><a href="index.php">Home</a></li>
                 <li><a href="membership.php">Membership</a></li>
+<<<<<<< HEAD
                 <li><a href="services.php">Services</a></li>
                 <li><a href="trainers.php">Trainers</a></li>
                 <li><a href="blog.php">Blog</a></li>
                 <li><a href="index.php#contact">Contact Us</a></li>
+=======
+                <li><a href="#services">Services</a></li>
+                <li><a href="trainers.php">Trainers</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+>>>>>>> f5cc3ee8381071c5140951148f0260daaa9a9787
             </ul>
         </nav>
         <div class="nav-right">
@@ -35,11 +45,19 @@
         check_login();
         $user_id = $_SESSION['user_id'];
         $msg = "";
+<<<<<<< HEAD
+=======
+        // Fetch current user data
+>>>>>>> f5cc3ee8381071c5140951148f0260daaa9a9787
         $stmt = $conn->prepare("SELECT name, email, phone FROM users WHERE id = ?");
         $stmt->bind_param("i", $user_id);
         $stmt->execute();
         $result = $stmt->get_result();
         $user = $result->fetch_assoc();
+<<<<<<< HEAD
+=======
+        // Handle form submission
+>>>>>>> f5cc3ee8381071c5140951148f0260daaa9a9787
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $name  = $_POST['name'];
             $email = $_POST['email'];
@@ -51,11 +69,16 @@
             } else {
                 $msg = "Error updating profile.";
             }
+<<<<<<< HEAD
+=======
+            // Refresh user data in case it's displayed again
+>>>>>>> f5cc3ee8381071c5140951148f0260daaa9a9787
             $user['name']  = $name;
             $user['email'] = $email;
             $user['phone'] = $phone;
         }
         ?>
+<<<<<<< HEAD
         <section class="update-profile-section profile-frame">
             <h2>Update Profile</h2>
             <?php if ($msg): ?>
@@ -78,6 +101,27 @@
         </section>
     </main>
      <footer class="footer">
+=======
+        <section class="update-profile-section">
+            <h2>Update Profile</h2>
+            <?php if ($msg): ?>
+                <p style="color: green;"><?= $msg ?></p>
+            <?php endif; ?>
+            <form method="POST">
+                <label>Name:</label><br>
+                <input type="text" name="name" value="<?= $user['name'] ?>" required><br><br>
+                <label>Email:</label><br>
+                <input type="email" name="email" value="<?= $user['email'] ?>" required><br><br>
+                <label>Phone Number:</label><br>
+                <input type="text" name="phone" value="<?= $user['phone'] ?>" required><br><br>
+                <button type="submit">Update Profile</button>
+            </form>
+            <br>
+            <a href="dashboard.php">&larr; Back to Dashboard</a>
+        </section>
+    </main>
+    <footer class="footer">
+>>>>>>> f5cc3ee8381071c5140951148f0260daaa9a9787
         <div class="footer-content">
             <div class="footer-left">
                 <h3>FitZone Fitness Center</h3>
@@ -88,10 +132,17 @@
                 <ul>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="membership.php">Membership</a></li>
+<<<<<<< HEAD
                     <li><a href="services.php">Services</a></li>
                     <li><a href="trainers.php">Trainers</a></li>
                     <li><a href="blog.php">Blog</a></li>
                     <li><a href="index.php#contact">Contact</a></li>
+=======
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="trainers.php">Trainers</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+>>>>>>> f5cc3ee8381071c5140951148f0260daaa9a9787
                 </ul>
             </div>
             <div class="footer-social">
