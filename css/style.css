@@ -16,6 +16,12 @@ body {
   min-height: 100vh;
   line-height: 1.6;
 }
+body.container{
+  padding-left: 0%;
+  padding-right: 0%;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
 
 /* Override for program pages */
 body.program-page {
@@ -934,6 +940,9 @@ button[type="submit"]:hover, .register-container button:hover, .forgot-container
   flex-direction: column;
   justify-content: stretch;
 }
+body.service-size {
+  overflow-x: hidden;
+}
 .about-container {
   background: #000;
   display: flex;
@@ -1805,6 +1814,7 @@ body.membership-page {
     cursor: pointer;
     transition: 0.3s ease;
 }
+
 
 .role-form button:hover {
     background-color: darkred;

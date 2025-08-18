@@ -6,7 +6,7 @@
   <title>FitZone Membership Plans</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="membership-page">
+<body class="membership-page container">
 
   <!-- Navbar -->
   <header class="navbar">

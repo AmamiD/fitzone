@@ -1,3 +1,25 @@
+ <?php
+        include 'includes/auth.php';
+        require 'includes/db.php';
+
+        check_login();
+
+        $popup_message = "";
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $user_id = $_SESSION['user_id'];
+            $class = $_POST['class'];
+            $date = $_POST['date_time'];
+            $stmt = $conn->prepare("INSERT INTO appointments (user_id, class_name, date_time) VALUES (?, ?, ?)");
+            $stmt->bind_param("iss", $user_id, $class, $date);
+            if ($stmt->execute()) {
+        $popup_message = "Appointment submitted successfully!";
+    } else {
+        $popup_message = "Error submitting appointment. Please try again.";
+    }
+        }
+        ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +28,13 @@
     <link rel="stylesheet" href="css/style.css">
    
 </head>
-<body class="scroll-page">
+<body class="container">
+<?php if (!empty($popup_message)): ?>
+<script>
+    alert("<?php echo addslashes($popup_message); ?>");
+</script>
+<?php endif; ?>
+
     <header class="navbar">
         <div class="logo">
             <img src="images/logo.png" alt="FitZone Logo">
@@ -29,20 +57,7 @@
         </div>
     </header>
     <main class="scroll-content">
-        <?php
-        include 'includes/auth.php';
-        require 'includes/db.php';
-        check_login();
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $user_id = $_SESSION['user_id'];
-            $class = $_POST['class'];
-            $date = $_POST['date_time'];
-            $stmt = $conn->prepare("INSERT INTO appointments (user_id, class_name, date_time) VALUES (?, ?, ?)");
-            $stmt->bind_param("iss", $user_id, $class, $date);
-            $stmt->execute();
-            echo "<p class='success-msg'>Appointment Booked!</p>";
-        }
-        ?>
+       
         <section class="book-appointment-section">
             <div class="appointment-frame">
                 <h2>Book an Appointment</h2>

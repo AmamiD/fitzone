@@ -6,7 +6,7 @@
     <title>Fitness Programs | FitZone</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="program-page fitness-programs-page">
+<body class="program-page fitness-programs-page container">
     <!-- Navbar -->
     <header class="navbar">
         <div class="logo">

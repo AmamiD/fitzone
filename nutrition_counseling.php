@@ -6,7 +6,7 @@
     <title>Nutrition Counseling | FitZone</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="program-page nutrition-counseling-page">
+<body class="program-page nutrition-counseling-page container">
     <!-- Navbar -->
     <header class="navbar">
         <div class="logo">

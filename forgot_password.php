@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Forgot Password - FitZone</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="scroll-page">
+<body class="scroll-page container">
     <header class="navbar">
         <div class="logo">
             <img src="images/logo.png" alt="FitZone Logo">

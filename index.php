@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name'], $_POST['email
     <title>FitZone Fitness Center</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="container">
 
 <?php if ($scrollToContact): ?>
 <script>

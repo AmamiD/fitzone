@@ -3,7 +3,7 @@ include '../includes/auth.php';
 require '../includes/db.php';
 check_login();
 
-if ($_SESSION['user_role'] !== 'staff') {
+if ($_SESSION['user_role'] !== 'staff' && $_SESSION['user_role'] !== 'admin') {
     echo "Access Denied.";
     exit();
 }
@@ -15,7 +15,7 @@ if ($_SESSION['user_role'] !== 'staff') {
     <title>Staff Dashboard</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body class="container">
     <h2>Staff Dashboard</h2>
 
     <!-- View Appointments -->
@@ -89,7 +89,7 @@ if ($_SESSION['user_role'] !== 'staff') {
         echo "</div>";
     }
     ?>
-
+  <a href="manage_users.php" class="logout-btn">Admin Dashboard</a>
    <a href="../logout.php" class="logout-btn">Logout</a>
 
 </body>

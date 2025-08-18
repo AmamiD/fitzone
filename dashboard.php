@@ -30,7 +30,7 @@ $stmt->close();
     <title>Dashboard - FitZone</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="scroll-page">
+<body class="container">
     <header class="navbar">
         <div class="logo">
             <img src="images/logo.png" alt="FitZone Logo">

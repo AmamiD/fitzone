@@ -6,7 +6,7 @@
     <title>Group Classes | FitZone</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="program-page group-classes-page">
+<body class="program-page group-classes-page container">
     <!-- Navbar -->
     <header class="navbar">
         <div class="logo">

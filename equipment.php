@@ -6,7 +6,7 @@
     <title> State-of-the-Art Equipments | FitZone</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="program-page equipment-page">
+<body class="program-page equipment-page container">
     <!-- Navbar -->
     <header class="navbar">
         <div class="logo">
@@ -37,7 +37,7 @@
                 <div class="program-card equipment-card">
                     <h3>Cardio Equipments</h3>
                     <p>Boost endurance, burn calories, and improve heart health using high-quality machines like treadmills, cross trainers, rowing machines, and stair climbers.</p>
-                    <div class="schedule-title">Sample Weekly Cardio Schedule:</div>
+                    <div class="schedule-title">Weekly Cardio Schedule:</div>
                     <ul>
                         <li><b>Monday:</b> Treadmill Intervals – 30 mins</li>
                         <li><b>Tuesday:</b> Cross Trainer Steady Pace – 25 mins</li>
@@ -52,7 +52,7 @@
                 <div class="program-card">
                     <h3>Strength Equipments</h3>
                     <p>Build muscle, enhance bone density, and improve core strength using tools like Smith machines, barbells, dumbbells, and resistance machines. Ideal for full-body or targeted muscle group workouts.</p>
-                    <div class="schedule-title">Sample Weekly Strength Schedule:</div>
+                    <div class="schedule-title">Weekly Strength Schedule:</div>
                     <ul>
                         <li><b>Monday:</b> Upper Body (Dumbbells & Smith Machine) – 60 mins</li>
                         <li><b>Tuesday:</b> Lower Body (Barbell Squats, Leg Press) – 60 mins</li>
@@ -67,7 +67,7 @@
                 <div class="program-card">
                     <h3>Functional Training Equipments</h3>
                     <p>Improve agility, coordination, and real-life movement strength with tools like kettlebells, battle ropes, medicine balls, and TRX suspension systems. Great for athletes and dynamic workout lovers.</p>
-                    <div class="schedule-title">Sample Weekly Functional Schedule:</div>
+                    <div class="schedule-title">Weekly Functional Schedule:</div>
                     <ul>
                         <li><b>Monday:</b> TRX Bodyweight Strength + Core – 45 mins</li>
                         <li><b>Tuesday:</b> Kettlebell Complexes – 30 mins</li>

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/profile.css"> <!-- New external CSS -->
 </head>
-<body class="scroll-page">
+<body class="scroll-page container">
     <header class="navbar">
         <div class="logo">
             <img src="images/logo.png" alt="FitZone Logo">

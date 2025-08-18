@@ -23,6 +23,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['user_id'], $_POST['new
     }
 }
 
+// Handle user deletion
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_user_id'])) {
+    $delete_id = $_POST['delete_user_id'];
+    $stmt = $conn->prepare("DELETE FROM users WHERE id = ?");
+    $stmt->bind_param("i", $delete_id);
+    if ($stmt->execute()) {
+        echo "<p class='success-msg'>User deleted successfully!</p>";
+    } else {
+        echo "<p class='error-msg'>Failed to delete user!</p>";
+    }
+}
+
 // Fetch users
 $result = $conn->query("SELECT id, name, email, role FROM users");
 ?>
@@ -52,9 +64,15 @@ $result = $conn->query("SELECT id, name, email, role FROM users");
                     <button type="submit">Update</button>
                 </form>
             </td>
+            <td>
+                <form method="POST" class="role-form" onsubmit="return confirm('Are you sure you want to delete this user?' );">
+                    <input type="hidden" name="delete_user_id" value="<?= $row['id'] ?>">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
         </tr>
         <?php endwhile; ?>
     </table>
-
+    <a href="staff_dashboard.php" class="logout-btn">Staff Dashboard</a>
     <a href="../logout.php" class="logout-btn">Logout</a>
 </div>

@@ -2,6 +2,12 @@
 session_start();
 require 'includes/db.php';
 
+$popup_message = "";
+
+if (isset($_GET['msg']) && $_GET['msg'] == 'registered') {
+    $popup_message = "Registration successful! Please login.";
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $password = $_POST["password"];
@@ -23,6 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $error = "User not found!";
     }
+    
 }
 ?>
 
@@ -33,7 +40,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>FitZone - Login</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="scroll-page">
+<body class="scroll-page container">
+    <?php if (!empty($popup_message)): ?>
+<script>
+    alert("<?php echo addslashes($popup_message); ?>");
+</script>
+<?php endif; ?>
+
     <header class="navbar">
         <div class="logo">
             <img src="images/logo.png" alt="FitZone Logo">

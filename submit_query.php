@@ -1,3 +1,26 @@
+
+ <?php
+        include 'includes/auth.php';
+        require 'includes/db.php';
+
+
+        check_login();
+
+        $popup_message = "";
+        
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $user_id = $_SESSION['user_id'];
+            $message = $_POST['message'];
+            $stmt = $conn->prepare("INSERT INTO queries (user_id, message) VALUES (?, ?)");
+            $stmt->bind_param("is", $user_id, $message);
+             if ($stmt->execute()) {
+        $popup_message = "Query submitted successfully!";
+    } else {
+        $popup_message = "Error submitting query. Please try again.";
+    }
+        }
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +28,14 @@
     <title>Submit Query - FitZone</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="scroll-page">
+<body class="scroll-page container">
+
+<?php if (!empty($popup_message)): ?>
+<script>
+    alert("<?php echo addslashes($popup_message); ?>");
+</script>
+<?php endif; ?>
+
     <header class="navbar">
         <div class="logo">
             <img src="images/logo.png" alt="FitZone Logo">
@@ -28,19 +58,7 @@
         </div>
     </header>
     <main class="scroll-content">
-        <?php
-        include 'includes/auth.php';
-        require 'includes/db.php';
-        check_login();
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $user_id = $_SESSION['user_id'];
-            $message = $_POST['message'];
-            $stmt = $conn->prepare("INSERT INTO queries (user_id, message) VALUES (?, ?)");
-            $stmt->bind_param("is", $user_id, $message);
-            $stmt->execute();
-            echo "<p class='success-msg'>Query submitted!</p>";
-        }
-        ?>
+
         <section class="submit-query-section">
             <h2>Submit a Query</h2>
             <form method="POST">

@@ -6,7 +6,7 @@
     <title>Personalized Training Sessions | FitZone</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="program-page training-sessions-page">
+<body class="program-page training-sessions-page container">
     <!-- Navbar -->
     <header class="navbar">
         <div class="logo">
@@ -60,7 +60,7 @@
                         <li>Daily/weekly meal guidelines (calories, macros, timing)</li>
                         <li>Food substitutions and snack ideas</li>
                     </ul>
-                    <div class="schedule-title">Schedule Example:</div>
+                    <div class="schedule-title">Schedule:</div>
                     <ul>
                         <li>Plan reviewed every week</li>
                         <li>Updated every 4 weeks for adaptation</li>
